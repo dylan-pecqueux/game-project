@@ -1,0 +1,478 @@
+$primary-color: white;
+$secondary-color: rgb(207, 2, 2);
+$body: rgb(34, 34, 34);
+$bg: black;
+$mobile-width: 800px;
+
+@mixin mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin red-button {
+  cursor: pointer;
+  background-color: $secondary-color;
+  color: $primary-color;
+  font-size: 20px;
+  width: 200px;
+  height: 50px;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin marge {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@mixin logo {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto-Regular.ttf");
+}
+
+.nimp {
+  background-image: url(images/search.svg);
+}
+
+* {
+  font-family: Roboto;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  background-color: $body;
+}
+
+header {
+  @include marge();
+}
+
+.page-list {
+  @include marge();
+}
+
+nav {
+  margin-top: 50px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include mobile {
+    display: block;
+    margin-bottom: 140px;
+  }
+  h1 {
+    font-size: 55px;
+    color: $secondary-color;
+  }
+  form {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 350px;
+    border-radius: 30px;
+    border: solid 1px $primary-color;
+    background-color: $body;
+    .btn {
+      margin-left: 20px;
+      background-color: $body;
+      border: none;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+    }
+    .icon {
+      height: 20px;
+      width: 20px;
+      background-image: url(images/search.svg);
+      background-repeat: no-repeat;
+    }
+  }
+  input {
+    width: 300px;
+    color: $primary-color;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    padding-left: 20px;
+    background-color: $body;
+    &:focus {
+      border-radius: 20px;
+      outline: none;
+      background-color: $body;
+    }
+    &::placeholder {
+      color: rgb(207, 207, 207);
+    }
+  }
+}
+
+#platforms-select {
+  padding-left: 20px;
+  padding-right: 10px;
+  background-color: $secondary-color;
+  color: $primary-color;
+  font-size: 20px;
+  width: 200px;
+  height: 40px;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.page-list {
+  display: flex;
+  justify-content: center;
+}
+
+.page-list .articles {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include mobile {
+    justify-content: center;
+  }
+}
+
+.article {
+  display: flex;
+  justify-content: center;
+}
+
+.showMore {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.btnShowMore {
+  @include red-button();
+}
+
+.cardGame {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateX(0);
+  opacity: 1;
+  transition-duration: 2s;
+  margin-right: 10px;
+  color: $primary-color;
+  width: 300px;
+  @include mobile {
+    width: 100%;
+  }
+  h1 {
+    font-size: 22px;
+    margin-bottom: 0;
+  }
+  .show-hover {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    transform: translateX(50px);
+    opacity: 0;
+    transition-duration: 1.5s;
+  }
+  &:hover > img {
+    opacity: 0.4;
+    transition-duration: 1.5s;
+  }
+  &:hover > .show-hover {
+    transform: translateX(0);
+    opacity: 1;
+    transition-duration: 1.5s;
+  }
+}
+
+.cardGame.not-visible {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+.welcome {
+  color: $primary-color;
+  margin-bottom: 50px;
+  h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+}
+
+.card-img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  @include mobile {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+.platform {
+  @include marge();
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.PC {
+  @include logo();
+  background-image: url(images/windows.svg);
+}
+
+.Xbox {
+  @include logo();
+  background-image: url(images/xbox.svg);
+}
+
+.PlayStation {
+  @include logo();
+  background-image: url(images/ps4.svg);
+}
+
+.Nintendo {
+  @include logo();
+  background-image: url(images/switch.svg);
+}
+
+.Android {
+  @include logo();
+  background-image: url(images/mobile.svg);
+}
+
+.Linux {
+  @include logo();
+  background-image: url(images/linux.svg);
+}
+
+// page detail
+.page-detail {
+  h2 {
+    margin-top: 60px;
+    font-size: 40px;
+    color: $secondary-color;
+  }
+  color: $primary-color;
+
+  a:hover {
+    outline: underline $secondary-color;
+  }
+}
+
+.game-img {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 0;
+  height: 500px;
+  background-size: cover;
+  background-position: top;
+  a {
+    @include red-button();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 10px;
+    width: 250px;
+    margin: 70px;
+    img {
+      height: 45px;
+      width: 45px;
+    }
+  }
+}
+
+.presentation {
+  @include marge();
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    margin: 40px 0 10px 0;
+    font-size: 50px;
+  }
+  h3 {
+    color: $secondary-color;
+    font-size: 30px;
+  }
+}
+
+.description {
+  @include marge();
+}
+
+.info {
+  @include marge();
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  div {
+    margin: 10px;
+    p {
+      margin-top: 0;
+    }
+  }
+}
+
+.searchInfo {
+  margin-right: 20px;
+  padding: 0;
+  cursor: pointer;
+  background-color: $body;
+  border: none;
+  color: $primary-color;
+  font-size: 17px;
+  &:focus {
+    outline: none;
+  }
+  &,
+  &:visited {
+    text-decoration: none;
+    position: relative;
+    color: $primary-color;
+
+    &:after {
+      content: "";
+      height: 3px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      background: $secondary-color;
+      transition: 0.2s;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
+
+    &.block {
+      display: block;
+      padding: 0.5em;
+
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
+}
+
+.buy {
+  @include marge();
+  display: flex;
+  flex-direction: column;
+  h2 {
+    color: $secondary-color;
+    font-size: 40px;
+  }
+  a {
+    margin-bottom: 20px;
+    color: $primary-color;
+    text-decoration: underline 2px $secondary-color;
+  }
+}
+
+.trailer {
+  @include marge();
+}
+
+.screenshots {
+  @include marge();
+  .img-screen {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    img {
+      width: 49%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.youtube {
+  @include marge();
+  h3 {
+    font-size: 25px;
+  }
+  h4 {
+    color: $secondary-color;
+  }
+  .first {
+    img {
+      height: 74%;
+      width: 100%;
+      object-fit: cover;
+      margin-right: 30px;
+    }
+    a {
+      margin-bottom: -5%;
+      margin-right: 30px;
+    }
+    width: 100%;
+    display: flex;
+  }
+  .other {
+    display: flex;
+    justify-content: space-between;
+    div {
+      h3 {
+        font-size: 15px;
+        margin-top: 0;
+      }
+      h4 {
+        margin-top: 0;
+        font-size: 13px;
+      }
+      a {
+        margin-bottom: -15%;
+      }
+      img {
+        margin-bottom: 0;
+        height: 74%;
+        width: 100%;
+        object-fit: cover;
+      }
+      width: 32%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+}
+
+.similar {
+  @include marge();
+  .similar-game {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+footer {
+  @include marge();
+  .underline {
+    height: 10px;
+    width: 200px;
+    background-color: $secondary-color;
+  }
+}
