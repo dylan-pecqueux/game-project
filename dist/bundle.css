@@ -1,0 +1,482 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(fonts/03523cf578d69fa923226ff457b92d90.ttf);
+}
+.nimp {
+  background-image: url(images/48aa76f4f39e7a082a9b4da8104176aa.svg);
+}
+
+* {
+  font-family: Roboto;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  background-color: #222222;
+}
+
+header {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.page-list {
+  width: 90%;
+  margin: 0 auto;
+}
+
+nav {
+  margin-top: 50px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  nav {
+    display: block;
+    margin-bottom: 140px;
+  }
+}
+nav h1 {
+  font-size: 55px;
+  color: #cf0202;
+}
+nav form {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 350px;
+  border-radius: 30px;
+  border: solid 1px white;
+  background-color: #222222;
+}
+nav form .btn {
+  margin-left: 20px;
+  background-color: #222222;
+  border: none;
+  cursor: pointer;
+}
+nav form .btn:focus {
+  outline: none;
+}
+nav form .icon {
+  height: 20px;
+  width: 20px;
+  background-image: url(images/48aa76f4f39e7a082a9b4da8104176aa.svg);
+  background-repeat: no-repeat;
+}
+nav input {
+  width: 300px;
+  color: white;
+  height: 40px;
+  border: none;
+  border-radius: 30px;
+  padding-left: 20px;
+  background-color: #222222;
+}
+nav input:focus {
+  border-radius: 20px;
+  outline: none;
+  background-color: #222222;
+}
+nav input::placeholder {
+  color: #cfcfcf;
+}
+
+#platforms-select {
+  padding-left: 20px;
+  padding-right: 10px;
+  background-color: #cf0202;
+  color: white;
+  font-size: 20px;
+  width: 200px;
+  height: 40px;
+  border: none;
+}
+#platforms-select:focus {
+  outline: none;
+}
+
+.page-list {
+  display: flex;
+  justify-content: center;
+}
+
+.page-list .articles {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 800px) {
+  .page-list .articles {
+    justify-content: center;
+  }
+}
+
+.article {
+  display: flex;
+  justify-content: center;
+}
+
+.showMore {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.btnShowMore {
+  cursor: pointer;
+  background-color: #cf0202;
+  color: white;
+  font-size: 20px;
+  width: 200px;
+  height: 50px;
+  border: none;
+}
+.btnShowMore:focus {
+  outline: none;
+}
+
+.cardGame {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateX(0);
+  opacity: 1;
+  transition-duration: 2s;
+  margin-right: 10px;
+  color: white;
+  width: 300px;
+}
+@media (max-width: 800px) {
+  .cardGame {
+    width: 100%;
+  }
+}
+.cardGame h1 {
+  font-size: 22px;
+  margin-bottom: 0;
+}
+.cardGame .show-hover {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  transform: translateX(50px);
+  opacity: 0;
+  transition-duration: 1.5s;
+}
+.cardGame:hover > img {
+  opacity: 0.4;
+  transition-duration: 1.5s;
+}
+.cardGame:hover > .show-hover {
+  transform: translateX(0);
+  opacity: 1;
+  transition-duration: 1.5s;
+}
+
+.cardGame.not-visible {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+.welcome {
+  color: white;
+  margin-bottom: 50px;
+}
+.welcome h2 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.card-img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+@media (max-width: 800px) {
+  .card-img {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+.platform {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.PC {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-image: url(images/65e5f871b7c679c57ad2f301cdb1ad3a.svg);
+}
+
+.Xbox {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-image: url(images/c44b5578fcccee020fd9a5e4b7292bca.svg);
+}
+
+.PlayStation {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-image: url(images/efe97f94b8021d7ce5e8b92bdb4237cc.svg);
+}
+
+.Nintendo {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-image: url(images/96438e0fb90b0c00220572d7d5b608cc.svg);
+}
+
+.Android {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-image: url(images/1aa15eb6e63595f0c01e29fd765f168d.svg);
+}
+
+.Linux {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-image: url(images/9a317a7739e9a5267703a9307f8abacb.svg);
+}
+
+.page-detail {
+  color: white;
+}
+.page-detail h2 {
+  margin-top: 60px;
+  font-size: 40px;
+  color: #cf0202;
+}
+.page-detail a:hover {
+  outline: underline #cf0202;
+}
+
+.game-img {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 0;
+  height: 500px;
+  background-size: cover;
+  background-position: top;
+}
+.game-img a {
+  cursor: pointer;
+  background-color: #cf0202;
+  color: white;
+  font-size: 20px;
+  width: 200px;
+  height: 50px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  width: 250px;
+  margin: 70px;
+}
+.game-img a:focus {
+  outline: none;
+}
+.game-img a img {
+  height: 45px;
+  width: 45px;
+}
+
+.presentation {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.presentation h1 {
+  margin: 40px 0 10px 0;
+  font-size: 50px;
+}
+.presentation h3 {
+  color: #cf0202;
+  font-size: 30px;
+}
+
+.description {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.info {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.info div {
+  margin: 10px;
+}
+.info div p {
+  margin-top: 0;
+}
+
+.searchInfo {
+  margin-right: 20px;
+  padding: 0;
+  cursor: pointer;
+  background-color: #222222;
+  border: none;
+  color: white;
+  font-size: 17px;
+}
+.searchInfo:focus {
+  outline: none;
+}
+.searchInfo, .searchInfo:visited {
+  text-decoration: none;
+  position: relative;
+  color: white;
+}
+.searchInfo:after, .searchInfo:visited:after {
+  content: "";
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  background: #cf0202;
+  transition: 0.2s;
+}
+.searchInfo:hover:after, .searchInfo:visited:hover:after {
+  width: 100%;
+}
+.searchInfo.block, .searchInfo:visited.block {
+  display: block;
+  padding: 0.5em;
+}
+.searchInfo.block:hover, .searchInfo:visited.block:hover {
+  background: #eee;
+}
+
+.buy {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.buy h2 {
+  color: #cf0202;
+  font-size: 40px;
+}
+.buy a {
+  margin-bottom: 20px;
+  color: white;
+  text-decoration: underline 2px #cf0202;
+}
+
+.trailer {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.screenshots {
+  width: 90%;
+  margin: 0 auto;
+}
+.screenshots .img-screen {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.screenshots .img-screen img {
+  width: 49%;
+  margin-bottom: 20px;
+}
+
+.youtube {
+  width: 90%;
+  margin: 0 auto;
+}
+.youtube h3 {
+  font-size: 25px;
+}
+.youtube h4 {
+  color: #cf0202;
+}
+.youtube .first {
+  width: 100%;
+  display: flex;
+}
+.youtube .first img {
+  height: 74%;
+  width: 100%;
+  object-fit: cover;
+  margin-right: 30px;
+}
+.youtube .first a {
+  margin-bottom: -5%;
+  margin-right: 30px;
+}
+.youtube .other {
+  display: flex;
+  justify-content: space-between;
+}
+.youtube .other div {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.youtube .other div h3 {
+  font-size: 15px;
+  margin-top: 0;
+}
+.youtube .other div h4 {
+  margin-top: 0;
+  font-size: 13px;
+}
+.youtube .other div a {
+  margin-bottom: -15%;
+}
+.youtube .other div img {
+  margin-bottom: 0;
+  height: 74%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.similar {
+  width: 90%;
+  margin: 0 auto;
+}
+.similar .similar-game {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer {
+  width: 90%;
+  margin: 0 auto;
+}
+footer .underline {
+  height: 10px;
+  width: 200px;
+  background-color: #cf0202;
+}
